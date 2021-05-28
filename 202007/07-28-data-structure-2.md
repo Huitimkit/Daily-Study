@@ -165,7 +165,7 @@ Array.prototype.mergeSort = function() {
 ```js
 Array.prototype.quickSort = function() {
   const rec = (arr) => {
-    if (arr.length === 1) {
+    if (arr.length <= 1) {
       return arr
     }
     const left = []
