@@ -34,13 +34,13 @@ ls -l
 切换当前目录
 
 ```bash
-#进入要目录
+#进入根目录
 cd /
 
-#进入 "home" 目录
+#进入 "home" 目录，也可以理解为用户的主目录
 cd ~
 
-#进入上一次工作路径
+#进入上一次工作路径，表示回到上一次所在的目录
 cd -
 
 #把上个命令的参数作为cd参数使用。
@@ -75,7 +75,13 @@ mkdir t
 mkdir -p /tmp/test/t1/t
 ```
 
-### 5、rm - Remove
+### 5、touch
+
+新建空白文件
+
+>touch 命令重复使用不会覆盖已有同名文件，而是更改这个文件的时间戳。
+
+### 6、rm - Remove
 
 删除一个目录中的一个或多个文件或目录，如果没有使用 -r 选项，则 rm 不会删除目录。如果使用 rm 来删除文件，通常仍可以将该文件恢复原状。
 
@@ -90,7 +96,7 @@ rm -rf test
 rm -- -f*
 ```
 
-### 6、rmdir - Remove Directory
+### 7、rmdir - Remove Directory
 
 从一个目录中删除一个或多个子目录项，删除某目录时也必须具有对其父目录的写权限。
 
@@ -101,7 +107,7 @@ rm -- -f*
 rmdir -p parent/child/child11
 ```
 
-### 7、mv - Move
+### 8、mv - Move
 
 移动文件或修改文件名
 
@@ -119,7 +125,7 @@ mv -i log1.txt log2.txt
 mv * ../
 ```
 
-### 8、cp - Copy
+### 9、cp - Copy
 
 将源文件复制至目标文件，或将多个源文件复制至目标目录。
 
@@ -128,9 +134,11 @@ mv * ../
 - -r 复制目录及目录内所有项目
 - -a 复制的文件与原文件时间一样
 
-### 9、cat - Concatenate and Print Files
+### 10、cat - Concatenate and Print Files
 
 用于在标准输出（监控器或屏幕）上查看文件内容
+
+使用 cat -n 可以带行号地打印文件内容
 
 ```bash
 # 一次显示整个文件
@@ -143,7 +151,7 @@ cat > filename
 cat file1 file2 > file
 ```
 
-### 10、more
+### 11、more
 
 功能类似于 cat, more 会以一页一页的显示方便使用者逐页阅读，而最基本的指令就是按空白键（space）就往下一页显示，按 b 键就会往回（back）一页显示。
 
@@ -176,3 +184,11 @@ more +3 text.txt
 # 列出目录详细信息，每次显示5行
 ls -l | more -5
 ```
+
+### 12、man
+
+如果你遇到困难，可以使用 man 命令，它是 Manual pages 的缩写。例如输入 man cat ，可以获取 cat 命令的详细的帮助文件。进入到 man 的页面后，按 q 可以退出 man。
+
+[https://blog.techbridge.cc/2017/12/23/linux-commnd-line-tutorial/](https://blog.techbridge.cc/2017/12/23/linux-commnd-line-tutorial/)
+[https://www.cnblogs.com/peida/archive/2012/10/23/2734829.html](https://www.cnblogs.com/peida/archive/2012/10/23/2734829.html)
+[https://wangchujiang.com/linux-command/](https://wangchujiang.com/linux-command/)
